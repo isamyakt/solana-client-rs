@@ -12,7 +12,7 @@ To write Client-Side application we'll use `solana-sdk` crate & for communicatio
 # build everything
 cargo build
 
-# run the command line
+# run the code
 cargo run 
 
 ```
