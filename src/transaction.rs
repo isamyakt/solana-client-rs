@@ -11,7 +11,7 @@ pub async fn create_transfer_account(
     sender: &Keypair,
     reciever: &Pubkey,
     amount: u64
-) -> Signature {
+) -> Option<Signature> {
     let instr = system_instruction::transfer(
         &sender.pubkey(),
         &reciever,
@@ -29,6 +29,6 @@ pub async fn create_transfer_account(
 
     let sig = client.send_and_confirm_transaction(&transaction).unwrap();
 
-    sig
+    Some(sig)
 
 }
