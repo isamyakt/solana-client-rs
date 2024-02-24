@@ -1,8 +1,14 @@
+// region:    --- Modules
+
 use solana_sdk::signer::keypair::Keypair;
 use std::path::Path;
 use std::env;
 use std::fs::{File, OpenOptions};
 use std::io::Write;
+
+// endregion: --- Modules
+
+// region:    --- Keypair
 
 pub async fn initialize_keypair() -> Keypair {
     let file_path = ".env";
@@ -49,3 +55,5 @@ pub async fn initialize_keypair() -> Keypair {
         }
     }
 }
+
+// endregion: --- Keypair

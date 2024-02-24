@@ -1,14 +1,21 @@
+// region:    --- Modules
+
 use solana_client::rpc_client::RpcClient;
 use solana_sdk::pubkey::Pubkey;
 use solana_sdk::signature::Signature;
+use solana_sdk::native_token::LAMPORTS_PER_SOL;
 
 use crate::balance::get_balance_in_lamports;
 
+// endregion: --- Modules
+
+
+// region:    --- Airdrop
+
 pub async fn airdrop_possible(client: &RpcClient, pubkey: &Pubkey) -> bool {
     let balance = get_balance_in_lamports(client, pubkey).await;
-    let lamports = 1000000000;
 
-    let result = !(balance > lamports);
+    let result = !(balance > LAMPORTS_PER_SOL);
     result
 }
 
@@ -31,3 +38,5 @@ pub async fn airdrop(client: &RpcClient, pubkey: &Pubkey) -> Option<Signature> {
 
     None
 } 
+
+// endregion: --- Airdrop

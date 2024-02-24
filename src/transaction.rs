@@ -1,3 +1,5 @@
+// region:    --- Modules
+
 use solana_client::rpc_client::RpcClient;
 use solana_sdk::signer::keypair::Keypair;
 use solana_sdk::pubkey::Pubkey;
@@ -5,6 +7,10 @@ use solana_sdk::signer::Signer;
 use solana_sdk::signature::Signature;
 use solana_sdk::system_instruction;
 use solana_sdk::transaction::Transaction;
+
+// endregion: --- Modules
+
+// region:    --- Transaction
 
 pub async fn create_transfer_account(
     client: &RpcClient,
@@ -32,3 +38,5 @@ pub async fn create_transfer_account(
     Some(sig)
 
 }
+
+// endregion: --- Transaction
